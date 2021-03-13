@@ -1,0 +1,1008 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="DynamicForms is a javascript library that handles all the interaction in forms with dynamic content in an easy and fast way.">
+      
+      
+      
+        <meta name="author" content="simomosi">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.5">
+    
+    
+      
+        <title>Fields configuration - DynamicForms</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.77f3fd56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#field-configuration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="DynamicForms" class="md-header__button md-logo" aria-label="DynamicForms">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M384 320H256c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM192 32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v128c0 17.67 14.33 32 32 32h95.72l73.16 128.04C211.98 300.98 232.4 288 256 288h.28L192 175.51V128h224V64H192V32zM608 0H480c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            DynamicForms
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fields configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/simomosi/dynamic-forms/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynamic-forms
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="DynamicForms" class="md-nav__button md-logo" aria-label="DynamicForms">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path d="M384 320H256c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V352c0-17.67-14.33-32-32-32zM192 32c0-17.67-14.33-32-32-32H32C14.33 0 0 14.33 0 32v128c0 17.67 14.33 32 32 32h95.72l73.16 128.04C211.98 300.98 232.4 288 256 288h.28L192 175.51V128h224V64H192V32zM608 0H480c-17.67 0-32 14.33-32 32v128c0 17.67 14.33 32 32 32h128c17.67 0 32-14.33 32-32V32c0-17.67-14.33-32-32-32z"/></svg>
+
+    </a>
+    DynamicForms
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/simomosi/dynamic-forms/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    dynamic-forms
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dynamic-forms-module/" class="md-nav__link">
+        How to use it
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Configuration
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Configuration" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Configuration
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../form-configuration/" class="md-nav__link">
+        Form configuration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rules/" class="md-nav__link">
+        Rules
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Fields configuration
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Fields configuration
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    name*
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    io
+  </a>
+  
+    <nav class="md-nav" aria-label="io">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event" class="md-nav__link">
+    event
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-htmlelement" class="md-nav__link">
+    get (htmlElement)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-htmlelement" class="md-nav__link">
+    set (htmlElement)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch" class="md-nav__link">
+    fetch*
+  </a>
+  
+    <nav class="md-nav" aria-label="fetch*">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#makeurl-data" class="md-nav__link">
+    makeUrl (data)*
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#makebody-data" class="md-nav__link">
+    makeBody (data)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fullfetchconfig-data" class="md-nav__link">
+    fullFetchConfig (data)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavior" class="md-nav__link">
+    behavior
+  </a>
+  
+    <nav class="md-nav" aria-label="behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clear-htmlelement" class="md-nav__link">
+    clear (htmlElement)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beforeupdate-htmlelement-data-subjectname" class="md-nav__link">
+    beforeUpdate (htmlElement, data, subjectName)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatestatus-htmlelement-data-subjectname" class="md-nav__link">
+    updateStatus (htmlElement, data, subjectName)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afterupdate-htmlelement-data-subjectname" class="md-nav__link">
+    afterUpdate (htmlElement, data, subjectName)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dropdown" class="md-nav__link">
+    dropdown
+  </a>
+  
+    <nav class="md-nav" aria-label="dropdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postprocessdata-htmlelement-data" class="md-nav__link">
+    postProcessData (htmlElement, data)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#savedata-htmlelement-data" class="md-nav__link">
+    saveData (htmlElement, data)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearonparentvoid" class="md-nav__link">
+    clearOnParentVoid
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkbox" class="md-nav__link">
+    checkbox
+  </a>
+  
+    <nav class="md-nav" aria-label="checkbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#booleanvalue" class="md-nav__link">
+    booleanValue
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/minimal-example/" class="md-nav__link">
+        Example
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    name*
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io" class="md-nav__link">
+    io
+  </a>
+  
+    <nav class="md-nav" aria-label="io">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#event" class="md-nav__link">
+    event
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get-htmlelement" class="md-nav__link">
+    get (htmlElement)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-htmlelement" class="md-nav__link">
+    set (htmlElement)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fetch" class="md-nav__link">
+    fetch*
+  </a>
+  
+    <nav class="md-nav" aria-label="fetch*">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#method" class="md-nav__link">
+    method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#makeurl-data" class="md-nav__link">
+    makeUrl (data)*
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#makebody-data" class="md-nav__link">
+    makeBody (data)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fullfetchconfig-data" class="md-nav__link">
+    fullFetchConfig (data)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#behavior" class="md-nav__link">
+    behavior
+  </a>
+  
+    <nav class="md-nav" aria-label="behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clear-htmlelement" class="md-nav__link">
+    clear (htmlElement)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#beforeupdate-htmlelement-data-subjectname" class="md-nav__link">
+    beforeUpdate (htmlElement, data, subjectName)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#updatestatus-htmlelement-data-subjectname" class="md-nav__link">
+    updateStatus (htmlElement, data, subjectName)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#afterupdate-htmlelement-data-subjectname" class="md-nav__link">
+    afterUpdate (htmlElement, data, subjectName)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dropdown" class="md-nav__link">
+    dropdown
+  </a>
+  
+    <nav class="md-nav" aria-label="dropdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#postprocessdata-htmlelement-data" class="md-nav__link">
+    postProcessData (htmlElement, data)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#savedata-htmlelement-data" class="md-nav__link">
+    saveData (htmlElement, data)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clearonparentvoid" class="md-nav__link">
+    clearOnParentVoid
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#checkbox" class="md-nav__link">
+    checkbox
+  </a>
+  
+    <nav class="md-nav" aria-label="checkbox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#booleanvalue" class="md-nav__link">
+    booleanValue
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/simomosi/dynamic-forms/tree/main/docs/configurations/field-configuration.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="field-configuration">Field configuration<a class="headerlink" href="#field-configuration" title="Permanent link">#</a></h1>
+<p>This document describes a single field configuration.</p>
+<p>The field configuration must be included in the <em>fields</em> collection in the <a href="../form-configuration/">form configuration</a>.</p>
+<p>Here's a complete single field configuration:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">fieldConfiguration</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;name&#39;</span><span class="o">:</span> <span class="s1">&#39;fieldName&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;io&#39;</span><span class="o">:</span> <span class="p">{</span>  <span class="c1">// Customize field input/output</span>
+        <span class="s1">&#39;event&#39;</span><span class="o">:</span> <span class="s1">&#39;change&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;get&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">htmlElement</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="p">},</span>
+        <span class="s1">&#39;set&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">htmlElement</span><span class="p">,</span> <span class="nx">value</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;fetch&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="c1">// Remote call options</span>
+        <span class="s1">&#39;method&#39;</span><span class="o">:</span> <span class="s1">&#39;GET&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;makeUrl&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="p">},</span>
+        <span class="s1">&#39;makeBody&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="p">},</span> <span class="c1">// JSON.stringify, formData, text...</span>
+        <span class="s1">&#39;fullFetchConfig&#39;</span><span class="o">:</span> <span class="p">{},</span> <span class="c1">// Fetch complete configuration</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;behavior&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;clear&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">htmlElement</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="p">},</span> <span class="c1">// Clear field from its content</span>
+        <span class="s1">&#39;beforeUpdate&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">htmlElement</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">subjectName</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="p">},</span> <span class="c1">// Executed before the remote call. Return false to block the update</span>
+        <span class="s1">&#39;updateStatus&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">htmlElement</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">subjectName</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="p">},</span>
+        <span class="s1">&#39;afterUpdate&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">htmlElement</span><span class="p">,</span> <span class="nx">data</span><span class="p">,</span> <span class="nx">subjectName</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="p">}</span> <span class="c1">// Executed after the remote call</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;dropdown&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="c1">// Only for dropdown elements</span>
+        <span class="s1">&#39;postProcessData&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">htmlElement</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="p">},</span> <span class="c1">// Process data retrieved by remote call</span>
+        <span class="s1">&#39;saveData&#39;</span><span class="o">:</span> <span class="p">(</span><span class="nx">htmlElement</span><span class="p">,</span> <span class="nx">data</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="p">},</span> <span class="c1">// Save data in html (es: &lt;option value=&quot;value&quot;&gt;&#39;text&#39;&lt;/option&gt;)</span>
+        <span class="s1">&#39;clearOnParentVoid&#39;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span> <span class="c1">// True (default) to clear field content when subject is empty; false to trigger a remote call</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;checkbox&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="c1">// Only for checkbox elements</span>
+        <span class="s1">&#39;booleanValue&#39;</span><span class="o">:</span> <span class="kc">true</span> <span class="c1">// True (default) to get element&#39;s value as boolean, based on the checked property; false to get the value property</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="name"><code>name</code>*<a class="headerlink" href="#name" title="Permanent link">#</a></h2>
+<p>The html element name.</p>
+<p>Type: <code>string</code>.</p>
+<p><em>required</em></p>
+<h2 id="io"><code>io</code><a class="headerlink" href="#io" title="Permanent link">#</a></h2>
+<p>Object which groups properties related to field input and output.</p>
+<h3 id="event"><code>event</code><a class="headerlink" href="#event" title="Permanent link">#</a></h3>
+<p>The html event which symbolize the Subject's status change (e.g. <em>change</em> for a dropdown, <em>click</em> for a checkbox...).</p>
+<p>It is used to put an event listener which will notify Subject's Observers.</p>
+<p>Type: <code>string</code>.</p>
+<p>Default value: <code>change</code>.</p>
+<h3 id="get-htmlelement"><code>get (htmlElement)</code><a class="headerlink" href="#get-htmlelement" title="Permanent link">#</a></h3>
+<p>Function to fetch the html element's value. Useful for custom html elements.</p>
+<p>Parameters
+- {<code>node | NodeList</code>} <code>htmlElement</code>: the html node</p>
+<p>Returns
+- {<code>string</code>} the field content</p>
+<h3 id="set-htmlelement"><code>set (htmlElement)</code><a class="headerlink" href="#set-htmlelement" title="Permanent link">#</a></h3>
+<p>Function to set the html element's value. Useful for custom html elements.</p>
+<p>Parameters
+- {<code>node | NodeList</code>} <code>htmlElement</code>: the html node
+- {<code>mixed</code>} <code>value</code>: the field's new value</p>
+<p>Returns
+- {<code>void</code>}</p>
+<h2 id="fetch"><code>fetch</code>*<a class="headerlink" href="#fetch" title="Permanent link">#</a></h2>
+<p>Object which groups properties related to remote calls.</p>
+<p><strong>Available only for <em>DynamicDropdown</em> instances</strong> (select-option like fields).</p>
+<p><strong>Required only if the dropdown element is an observer</strong> (it will be updated for every observed subject change), unless you specify a new <em>updateStatus</em> function.</p>
+<h3 id="method"><code>method</code><a class="headerlink" href="#method" title="Permanent link">#</a></h3>
+<p>It's the <em>http request method</em> (or verb).</p>
+<p>Type: <code>string</code>.</p>
+<p>Default value: <code>GET</code></p>
+<h3 id="makeurl-data"><code>makeUrl (data)</code>*<a class="headerlink" href="#makeurl-data" title="Permanent link">#</a></h3>
+<p>A function to generate the url to make the remote call to.</p>
+<p><em>required</em></p>
+<p>Parameters
+- {<code>JSON</code>} <code>data</code>: data obtained from additionalData and externalData functions in Update Rule Config</p>
+<p>Returns
+- {<code>string</code>} The remote call url</p>
+<h3 id="makebody-data"><code>makeBody (data)</code><a class="headerlink" href="#makebody-data" title="Permanent link">#</a></h3>
+<p>A function to generate the remote call body in the desired method (e.g. JSON.stringify, FormData...).</p>
+<p>It's not necessary if the remote call uses the GET request method (parameters need to be placed in the url).</p>
+<p>Parameters
+- {<code>JSON</code>} <code>data</code>: data obtained from additionalData and externalData functions in Update Rule Config</p>
+<p>Returns
+- {<code>object</code>} The remote call body</p>
+<h3 id="fullfetchconfig-data"><code>fullFetchConfig (data)</code><a class="headerlink" href="#fullfetchconfig-data" title="Permanent link">#</a></h3>
+<p>A function to generate the complete Fetch configuration for remote calls.</p>
+<p>If this function is defined, the updateStatus default function will ignore <em>fetch.method</em> property and <em>fetch.makeBody</em> function.</p>
+<p>Parameters
+- {<code>JSON</code>} <code>data</code>: data obtained from additionalData and externalData functions in Update Rule Config</p>
+<p>Returns
+- {<code>object</code>} The complete Fetch configuration</p>
+<h2 id="behavior"><code>behavior</code><a class="headerlink" href="#behavior" title="Permanent link">#</a></h2>
+<p>Object which groups properties related to field behavior.</p>
+<h3 id="clear-htmlelement"><code>clear (htmlElement)</code><a class="headerlink" href="#clear-htmlelement" title="Permanent link">#</a></h3>
+<p>Function to unset the field's current value. Sometimes it is used to clear the field from its content (for input and dropdown types).</p>
+<p>Parameters
+- {<code>node | NodeList</code>} <code>htmlElement</code>: the html node</p>
+<p>Returns
+- {<code>void</code>}</p>
+<h3 id="beforeupdate-htmlelement-data-subjectname"><code>beforeUpdate (htmlElement, data, subjectName)</code><a class="headerlink" href="#beforeupdate-htmlelement-data-subjectname" title="Permanent link">#</a></h3>
+<p>Method called before triggering the field's status update. If return value is <em>false</em>, the update is aborted.</p>
+<p>Default behavior: nothing. For <strong>DynamicDropdown</strong> elements it clear the field content if <em>clearOnParentVoid</em> conditions are satisfied.</p>
+<p>Parameters
+- {<code>node | NodeList</code>} <code>htmlElement</code>: the html node
+- {<code>JSON</code>} <code>data</code>: data obtained from additionalData and externalData functions in Update Rule Config
+- {<code>string</code>}: <code>subjectName</code>: the name of the subject who triggered the update. It can be null if the update is triggered manually</p>
+<p>Returns
+- {<code>boolean</code>} <em>false</em> to abort the update, <em>true</em> otherwise</p>
+<h3 id="updatestatus-htmlelement-data-subjectname"><code>updateStatus (htmlElement, data, subjectName)</code><a class="headerlink" href="#updatestatus-htmlelement-data-subjectname" title="Permanent link">#</a></h3>
+<p>Method to update the field status. It is useful to update the field's attributes (<em>display</em>, <em>disabled</em>...) and content.</p>
+<p>Default behavior: nothing. For <strong>DynamicDropdown</strong> elements it makes a remote call (using <em>fetch</em>), retrieves new date and saves it as <em>select</em> new content (<em>option</em>).</p>
+<p>Parameters
+- {<code>node | NodeList</code>} <code>htmlElement</code>: the html node
+- {<code>JSON</code>} <code>data</code>: data obtained from additionalData and externalData functions in Update Rule Config
+- {<code>string</code>}: <code>subjectName</code>: the name of the subject who triggered the update. It can be null if the update is triggered manually</p>
+<p>Returns
+- {<code>void</code>}</p>
+<h3 id="afterupdate-htmlelement-data-subjectname"><code>afterUpdate (htmlElement, data, subjectName)</code><a class="headerlink" href="#afterupdate-htmlelement-data-subjectname" title="Permanent link">#</a></h3>
+<p>Method called after triggering the field's status update.</p>
+<p>Parameters
+- {<code>node | NodeList</code>} <code>htmlElement</code>: the html node
+- {<code>JSON</code>} <code>data</code>: data obtained from additionalData and externalData functions in Update Rule Config
+- {<code>string</code>}: <code>subjectName</code>: the name of the subject who triggered the update. It can be null if the update is triggered manually</p>
+<p>Returns
+- {<code>boolean</code>} (currently) unused</p>
+<h2 id="dropdown"><code>dropdown</code><a class="headerlink" href="#dropdown" title="Permanent link">#</a></h2>
+<p>Object which groups properties related to select-option elements.</p>
+<h3 id="postprocessdata-htmlelement-data"><code>postProcessData (htmlElement, data)</code><a class="headerlink" href="#postprocessdata-htmlelement-data" title="Permanent link">#</a></h3>
+<p>Function to process data retrieved by remote call. It is useful for filtering/ordering data.</p>
+<p>Parameters
+- {<code>node | NodeList</code>} <code>htmlElement</code>: the html node
+- {<code>JSON | object[]</code>} <code>data</code>: data retrieved from the remote call</p>
+<p>Returns
+- {<code>JSON | object[]</code>} post-processed data</p>
+<h3 id="savedata-htmlelement-data"><code>saveData (htmlElement, data)</code><a class="headerlink" href="#savedata-htmlelement-data" title="Permanent link">#</a></h3>
+<p>Function to phisically save (post-processed) data retrieved by a remote call as html.</p>
+<p>Default behavior: saves data as <em>option</em> html elements using <em>value</em> and <em>test</em> properties.</p>
+<p>Parameters
+- {<code>node | NodeList</code>} <code>htmlElement</code>: the html node where data will be saved
+- {<code>JSON | object[]</code>} <code>data</code>: data retrieved from the remote call</p>
+<p>Returns
+- {<code>JSON | object[]</code>} post-processed data (not used)</p>
+<h3 id="clearonparentvoid"><code>clearOnParentVoid</code><a class="headerlink" href="#clearonparentvoid" title="Permanent link">#</a></h3>
+<p>Property which (when <code>true</code>) tells to clear field content when subject value is empty instead of triggering a remote call (when <code>false</code>).</p>
+<p>Type: <code>boolean</code>.</p>
+<p>Default value: <code>true</code>.</p>
+<h2 id="checkbox"><code>checkbox</code><a class="headerlink" href="#checkbox" title="Permanent link">#</a></h2>
+<p>Object which groups properties related to select-option elements.</p>
+<h3 id="booleanvalue"><code>booleanValue</code><a class="headerlink" href="#booleanvalue" title="Permanent link">#</a></h3>
+<p>Property which tells if the field's value is <em>boolean</em>.</p>
+<p>When <em>true</em> the field considers its value as <em>boolean</em>, based on the  html <code>checked</code> attribute; when <em>false</em> it considers its value as <em>string</em>, based on the <code>value</code> attribute.</p>
+<p>Type: <code>boolean</code>.</p>
+<p>Default value: <code>true</code>.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../rules/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Rules
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../../examples/minimal-example/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Example
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 - 2021 Simone Mosi
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://www.linkedin.com/in/simonemosi/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/simomosi" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.expand"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf3e710.min.js"></script>
+      
+    
+  </body>
+</html>
